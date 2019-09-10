@@ -76,8 +76,10 @@ class _InputPageState extends State<InputPage> {
 										style: k_labelTextStyle,
 									),
 									Row(
-										mainAxisAlignment: MainAxisAlignment.center,
-										crossAxisAlignment: CrossAxisAlignment.baseline,
+										mainAxisAlignment: MainAxisAlignment
+											.center,
+										crossAxisAlignment: CrossAxisAlignment
+											.baseline,
 										textBaseline: TextBaseline.alphabetic,
 										children: <Widget>[
 											Text(
@@ -90,17 +92,29 @@ class _InputPageState extends State<InputPage> {
 											)
 										],
 									),
-									Slider(
-										value: height.toDouble(),
-										min: minSliderValue,
-										max: maxSliderValue,
-										activeColor: k_activeSliderColor,
-										inactiveColor: k_inActiveSliderColor,
-										onChanged: (double newValue) {
-											setState(() {
-												height = newValue.round();
-											});
-										},
+									SliderTheme(
+										data: SliderTheme.of(context).copyWith(
+											activeTrackColor: Colors.white,
+											inactiveTrackColor: k_inActiveSliderColor,
+											thumbColor: k_sliderThumbColor,
+											overlayColor: k_sliderOverlayColor,
+											thumbShape: RoundSliderThumbShape(
+												enabledThumbRadius: k_enabledThumbRadius,
+											),
+											overlayShape: RoundSliderOverlayShape(
+												overlayRadius: k_overlayRadius,
+											),
+										),
+										child: Slider(
+											value: height.toDouble(),
+											min: minSliderValue,
+											max: maxSliderValue,
+											onChanged: (double newValue) {
+												setState(() {
+													height = newValue.round();
+												});
+											},
+										),
 									)
 								],
 							),
