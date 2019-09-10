@@ -225,15 +225,20 @@ class _InputPageState extends State<InputPage> {
 					),
 					GestureDetector(
 						onTap: () {
-							Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));
+							Navigator.push(context, MaterialPageRoute(
+								builder: (context) => ResultPage()));
 						},
 						child: Container(
+							padding: EdgeInsets.only(bottom: 10.0),
 							color: k_bottomContainerColor,
 							height: k_bottomContainerHeight,
 							width: double.infinity,
 							margin: EdgeInsets.only(top: 10.0),
-							child: Text(
-								'CALCULATE'
+							child: Center(
+								child: Text(
+									'CALCULATE',
+									style: k_largeButtonTextStyle,
+								),
 							),
 						),
 					),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
-const widthConstraint = 56.0;
-const heightConstraint = 56.0;
+const widthConstraint = 40.0;
+const heightConstraint = 40.0;
 const elevation = 6.0;
 
 class RoundIconButton extends StatelessWidget {
