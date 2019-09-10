@@ -12,6 +12,22 @@ const k_largeButtonTextStyle = TextStyle(
 	fontSize: 25.0,
 	fontWeight: FontWeight.bold,
 );
+const k_titleTextStyle = TextStyle(
+	fontSize: 50.0,
+	fontWeight: FontWeight.bold,
+);
+const k_resultTextStyle = TextStyle(
+	fontSize: 22.0,
+	fontWeight: FontWeight.bold,
+	color: Color(0xFF24D876),
+);
+const k_BMITextStyle = TextStyle(
+	fontSize: 100.0,
+	fontWeight: FontWeight.bold,
+);
+const k_bodyTextStyle = TextStyle(
+	fontSize: 22.0,
+);
 
 const k_sizedBoxHeight = 15.0;
 const k_sizedBoxWidth = 10.0;
