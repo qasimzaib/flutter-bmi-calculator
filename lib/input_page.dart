@@ -1,9 +1,11 @@
+import 'package:bmi_calculator/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_widget.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
 import 'round_icon_button.dart';
+import 'result_page.dart';
 
 enum Gender {
 	male,
@@ -130,7 +132,8 @@ class _InputPageState extends State<InputPage> {
 									child: ReusableCard(
 										color: k_inActiveCardColor,
 										cardChild: Column(
-											mainAxisAlignment: MainAxisAlignment.center,
+											mainAxisAlignment: MainAxisAlignment
+												.center,
 											children: <Widget>[
 												Text(
 													'WEIGHT',
@@ -175,7 +178,8 @@ class _InputPageState extends State<InputPage> {
 									child: ReusableCard(
 										color: k_inActiveCardColor,
 										cardChild: Column(
-											mainAxisAlignment: MainAxisAlignment.center,
+											mainAxisAlignment: MainAxisAlignment
+												.center,
 											children: <Widget>[
 												Text(
 													'AGE',
@@ -186,10 +190,12 @@ class _InputPageState extends State<InputPage> {
 													style: k_numberTextStyle,
 												),
 												Row(
-													mainAxisAlignment: MainAxisAlignment.center,
+													mainAxisAlignment: MainAxisAlignment
+														.center,
 													children: <Widget>[
 														RoundIconButton(
-															icon: FontAwesomeIcons.minus,
+															icon: FontAwesomeIcons
+																.minus,
 															onPressed: () {
 																setState(() {
 																	age--;
@@ -200,7 +206,8 @@ class _InputPageState extends State<InputPage> {
 															width: k_sizedBoxWidth,
 														),
 														RoundIconButton(
-															icon: FontAwesomeIcons.plus,
+															icon: FontAwesomeIcons
+																.plus,
 															onPressed: () {
 																setState(() {
 																	age++;
@@ -216,11 +223,19 @@ class _InputPageState extends State<InputPage> {
 							],
 						),
 					),
-					Container(
-						color: k_bottomContainerColor,
-						height: k_bottomContainerHeight,
-						width: double.infinity,
-						margin: EdgeInsets.only(top: 10.0),
+					GestureDetector(
+						onTap: () {
+							Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));
+						},
+						child: Container(
+							color: k_bottomContainerColor,
+							height: k_bottomContainerHeight,
+							width: double.infinity,
+							margin: EdgeInsets.only(top: 10.0),
+							child: Text(
+								'CALCULATE'
+							),
+						),
 					),
 				],
 			)
