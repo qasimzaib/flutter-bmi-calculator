@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'icon_widget.dart';
+import 'reusable_card.dart';
+
+const activeCardColor = Color(0xFF1D1E33);
 
 class InputPage extends StatefulWidget {
 	@override
@@ -7,8 +11,6 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-	Color activeCardColor = Color(0xFF1D1E33);
-
 	@override
 	Widget build(BuildContext context) {
 		return Scaffold(
@@ -21,7 +23,7 @@ class _InputPageState extends State<InputPage> {
 						child: Row(
 							children: <Widget>[
 								Expanded(
-									child: Card(
+									child: ReusableCard(
 										color: activeCardColor,
 										cardChild: IconWidget(
 											icon: FontAwesomeIcons.mars,
@@ -30,7 +32,7 @@ class _InputPageState extends State<InputPage> {
 									),
 								),
 								Expanded(
-									child: Card(
+									child: ReusableCard(
 										color: activeCardColor,
 										cardChild: IconWidget(
 											icon: FontAwesomeIcons.venus,
@@ -53,55 +55,6 @@ class _InputPageState extends State<InputPage> {
 					),
 				],
 			)
-		);
-	}
-}
-
-class IconWidget extends StatelessWidget {
-	IconWidget({@required this.icon, @required this.iconText});
-
-	final IconData icon;
-	final String iconText;
-
-	@override
-	Widget build(BuildContext context) {
-		return Column(
-			mainAxisAlignment: MainAxisAlignment.center,
-			children: <Widget>[
-				Icon(
-					icon,
-					size: 80.0,
-				),
-				SizedBox(
-					height: 15.0,
-				),
-				Text(
-					iconText,
-					style: TextStyle(
-						fontSize: 18.0,
-						color: Color(0xFF8D8E98),
-					),
-				),
-			],
-		);
-	}
-}
-
-class Card extends StatelessWidget {
-	final Color color;
-	final Widget cardChild;
-
-	Card({@required this.color, this.cardChild});
-
-	@override
-	Widget build(BuildContext context) {
-		return Container(
-			child: cardChild,
-			margin: EdgeInsets.all(15.0),
-			decoration: BoxDecoration(
-				color: color,
-				borderRadius: BorderRadius.circular(5.0),
-			),
 		);
 	}
 }
